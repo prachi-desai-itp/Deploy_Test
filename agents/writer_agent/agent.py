@@ -21,7 +21,7 @@ from .prompt import SYSTEM_PROMPT, AGENT_DESCRIPTION
 
 writer_agent = Agent(
     name="writer_agent",
-    model='gemini/gemini-2.5-flash',
+    model='bedrock/us.anthropic.claude-sonnet-4-5-20250929-v1:0',
     description=AGENT_DESCRIPTION,
     instruction=SYSTEM_PROMPT,
     tools=[
