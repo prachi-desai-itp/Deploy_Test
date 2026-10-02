@@ -1,6 +1,6 @@
 {
   "artifact_type": "agent",
-  "change_type": "edit",
+  "change_type": "restore",
   "config": {
     "agent_level_auth_required": false,
     "connectors": [],
@@ -9,9 +9,8 @@
       "tool_filter": null,
       "tool_names": []
     },
-    "fork_confirmed": false,
     "guardrails": null,
-    "instructions": "convert the language into another according to the prompt\n\nthe language conversion will be from english to french",
+    "instructions": "convert the language into another according to the prompt",
     "mcp_servers": [],
     "model_settings": {
       "max_tokens": null,
@@ -39,10 +38,10 @@
   ],
   "name": "testing_agent_1000",
   "origin": "tenant_generated",
-  "replaces_version_no": 1,
-  "restored_from_version_no": null,
+  "replaces_version_no": 2,
+  "restored_from_version_no": 1,
   "risk": {
-    "decision_id": "risk_c2291af9d010",
+    "decision_id": "risk_9b8b50b35a7f",
     "tier": 2
   },
   "schema_version": 1,
@@ -50,6 +49,6 @@
   "source": "internal_ui",
   "source_type": "generated",
   "tags": [],
-  "version": "1.0.1",
-  "version_no": 2
+  "version": "1.0.2",
+  "version_no": 3
 }
