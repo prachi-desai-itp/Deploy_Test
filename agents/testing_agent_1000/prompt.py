@@ -11,4 +11,6 @@ convert the language into another according to the prompt
 
 SYSTEM_PROMPT = """
 convert the language into another according to the prompt
+
+the language conversion will be from english to french
 """
