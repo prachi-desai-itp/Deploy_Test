@@ -23,14 +23,7 @@ _spec_tools_ppp_calculator_tools = _ilu.spec_from_file_location(
 )
 _mod_tools_ppp_calculator_tools = _ilu.module_from_spec(_spec_tools_ppp_calculator_tools)
 _spec_tools_ppp_calculator_tools.loader.exec_module(_mod_tools_ppp_calculator_tools)
-_spec_tools_prime_number_tools = _ilu.spec_from_file_location(
-    'prime_number_tools',
-    _pl.Path(__file__).parent.parent.parent / 'tools' / 'prime_number_tools.py',
-)
-_mod_tools_prime_number_tools = _ilu.module_from_spec(_spec_tools_prime_number_tools)
-_spec_tools_prime_number_tools.loader.exec_module(_mod_tools_prime_number_tools)
 
-tool_calculate_primes = _mod_tools_prime_number_tools.calculate_primes
 tool_add = _mod_tools_pp_calculator_tools.add
 tool_divide = _mod_tools_pp_calculator_tools.divide
 tool_multiply = _mod_tools_pp_calculator_tools.multiply
@@ -38,15 +31,6 @@ tool_subtract = _mod_tools_pp_calculator_tools.subtract
 tool_add_integers = _mod_tools_ppp_calculator_tools.add_integers
 
 mcp = FastMCP("calc_test")
-
-
-@mcp.tool()
-async def calculate_primes(n: int) -> Dict[str, Any]:
-    """
-    Auto-generated MCP tool wrapper for `calculate_primes`.
-    Calls the `calculate_primes` tool from the `prime_number_tools` tool module.
-    """
-    return tool_calculate_primes(n=n)
 
 
 @mcp.tool()

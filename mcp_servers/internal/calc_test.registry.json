@@ -5,7 +5,6 @@
     "description": "Internal FastMCP (stdio) server with 7 tools",
     "server_name": "calc_test",
     "tools": [
-      "calculate_primes",
       "add",
       "multiply",
       "divide",
@@ -28,13 +27,6 @@
       "type": "tool",
       "upstream_content_hash": "9dfa8846da20685f155942e72b81cbcb2a709f7796b3045e2a1c8e0a11083367",
       "upstream_version": "platform"
-    },
-    {
-      "name": "prime_number_tools.py",
-      "origin": "platform",
-      "type": "tool",
-      "upstream_content_hash": "1bdbe21b07930bf9bf6557f5a6266b692427f3c899a609f606832fe91a5faf16",
-      "upstream_version": "platform"
     }
   ],
   "description": "Internal FastMCP (stdio) server with 7 tools",
@@ -45,10 +37,10 @@
   ],
   "name": "calc_test.py",
   "origin": "tenant_generated",
-  "replaces_version_no": 1,
+  "replaces_version_no": 2,
   "restored_from_version_no": null,
   "risk": {
-    "decision_id": "risk_f9737cd9a1df",
+    "decision_id": "risk_a0406bd17c53",
     "tier": 3
   },
   "schema_version": 1,
@@ -56,6 +48,6 @@
   "source": "human_approval",
   "source_type": "generated",
   "tags": [],
-  "version": "1.0.1",
-  "version_no": 2
+  "version": "1.0.2",
+  "version_no": 3
 }
