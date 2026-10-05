@@ -14,12 +14,6 @@ from dotenv import load_dotenv, find_dotenv
 from google.adk import Agent, Workflow, Event, Context
 import importlib.util as _ilu
 import pathlib as _pl
-_spec_agents_critic_agent = _ilu.spec_from_file_location(
-    'critic_agent',
-    _pl.Path(__file__).parent.parent.parent / 'agents' / 'critic_agent' / 'agent.py',
-)
-_mod_agents_critic_agent = _ilu.module_from_spec(_spec_agents_critic_agent)
-_spec_agents_critic_agent.loader.exec_module(_mod_agents_critic_agent)
 _spec_agents_writer_agent = _ilu.spec_from_file_location(
     'writer_agent',
     _pl.Path(__file__).parent.parent.parent / 'agents' / 'writer_agent' / 'agent.py',
@@ -27,7 +21,6 @@ _spec_agents_writer_agent = _ilu.spec_from_file_location(
 _mod_agents_writer_agent = _ilu.module_from_spec(_spec_agents_writer_agent)
 _spec_agents_writer_agent.loader.exec_module(_mod_agents_writer_agent)
 
-critic_agent = _mod_agents_critic_agent.root_agent
 writer_agent = _mod_agents_writer_agent.root_agent
 from pydantic import BaseModel
 from typing import Any
@@ -73,7 +66,6 @@ root_agent = Workflow(
     name="tier3_graph_report",
     edges=[
         ("START", writer_agent),
-        (writer_agent, critic_agent),
-        (critic_agent,),  # → END
+        (writer_agent,),  # → END
     ]
 )
