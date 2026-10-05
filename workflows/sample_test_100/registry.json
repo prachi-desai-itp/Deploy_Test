@@ -1,12 +1,12 @@
 {
   "artifact_type": "workflow",
-  "change_type": "create",
+  "change_type": "edit",
   "config": {
     "agent_names": [
       "writer_agent"
     ],
     "agent_tool_names": null,
-    "description": "does route to writer agent to write ",
+    "description": "does route to writer agent to write hello",
     "global_instruction": "does route to writer agent to write ",
     "instructions": "does route to writer agent to write ",
     "loop_agents": null,
@@ -30,10 +30,10 @@
       "name": "writer_agent",
       "origin": "tenant_generated",
       "type": "agent",
-      "version_no": 3
+      "version_no": 4
     }
   ],
-  "description": "does route to writer agent to write ",
+  "description": "does route to writer agent to write hello",
   "display_name": "Sample Test 100",
   "files": [
     "workflows/sample_test_100/__init__.py",
@@ -41,17 +41,17 @@
   ],
   "name": "sample_test_100",
   "origin": "tenant_generated",
-  "replaces_version_no": null,
+  "replaces_version_no": 1,
   "restored_from_version_no": null,
   "risk": {
-    "decision_id": "risk_b38e3849d730",
-    "tier": 1
+    "decision_id": "risk_78e3d78e2885",
+    "tier": 2
   },
   "schema_version": 1,
   "secret_refs": [],
   "source": "internal_ui",
   "source_type": "generated",
   "tags": [],
-  "version": "1.0.0",
-  "version_no": 1
+  "version": "1.0.1",
+  "version_no": 2
 }

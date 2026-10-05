@@ -3,7 +3,7 @@
 
 """
 Workflow: sample_test_100
-Description: does route to writer agent to write 
+Description: does route to writer agent to write hello
 Instructions: does route to writer agent to write 
 """
 from __future__ import annotations
@@ -29,7 +29,7 @@ writer_agent = _mod_agents_writer_agent.root_agent
 root_agent = Agent(
     model='us.anthropic.claude-sonnet-4-5-20250929-v1:0',
     name="sample_test_100",
-    description="""does route to writer agent to write """,
+    description="""does route to writer agent to write hello""",
     instruction="""does route to writer agent to write """,
     global_instruction="""does route to writer agent to write """,
     sub_agents=[writer_agent],
