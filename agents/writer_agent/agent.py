@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from google.adk import Agent
-from google.adk.tools import load_memory
 from google.genai import types
 
 import importlib.util as _ilu
@@ -25,7 +24,7 @@ def create_writer_agent() -> Agent:
         model='bedrock/us.anthropic.claude-sonnet-4-5-20250929-v1:0',
         description="Generates and refines documents on various topics, creating clear and well-structured content.",
         instruction=SYSTEM_PROMPT,
-        tools=[load_memory],
+        tools=[],
         generate_content_config=types.GenerateContentConfig(
             safety_settings=[
                 types.SafetySetting(

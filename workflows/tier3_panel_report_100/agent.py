@@ -8,7 +8,6 @@ Instructions: Write a short report on the topic, then zip the final report and s
 """
 from __future__ import annotations
 from google.adk import Agent
-from google.adk.tools import load_memory
 from google.genai import types
 
 import importlib.util as _ilu
@@ -34,7 +33,7 @@ critic_agent = _mod_agents_critic_agent.root_agent
 
 
 root_agent = Agent(
-    model='us.anthropic.claude-sonnet-4-5-20250929-v1:0',
+    model='gemini/gemini-2.5-pro',
     name="tier3_panel_report_100",
     description="""Writes a short report and has it reviewed""",
     instruction="""Write a short report on the topic, then zip the final report and send it to the archive team.""",
@@ -48,5 +47,5 @@ root_agent = Agent(
             ),
         ]
     ),
-    tools=[load_memory],
+    tools=[],
 )
