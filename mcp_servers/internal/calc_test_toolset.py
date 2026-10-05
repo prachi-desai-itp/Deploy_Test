@@ -11,12 +11,6 @@ from typing import Any, Dict, List, Optional
 
 import importlib.util as _ilu
 import pathlib as _pl
-_spec_tools_financial_plotting_tools = _ilu.spec_from_file_location(
-    'financial_plotting_tools',
-    _pl.Path(__file__).parent.parent.parent / 'tools' / 'financial_plotting_tools.py',
-)
-_mod_tools_financial_plotting_tools = _ilu.module_from_spec(_spec_tools_financial_plotting_tools)
-_spec_tools_financial_plotting_tools.loader.exec_module(_mod_tools_financial_plotting_tools)
 _spec_tools_pp_calculator_tools = _ilu.spec_from_file_location(
     'pp_calculator_tools',
     _pl.Path(__file__).parent.parent.parent / 'tools' / 'pp_calculator_tools.py',
@@ -36,7 +30,6 @@ _spec_tools_prime_number_tools = _ilu.spec_from_file_location(
 _mod_tools_prime_number_tools = _ilu.module_from_spec(_spec_tools_prime_number_tools)
 _spec_tools_prime_number_tools.loader.exec_module(_mod_tools_prime_number_tools)
 
-tool_calculate_volatility_metrics = _mod_tools_financial_plotting_tools.calculate_volatility_metrics
 tool_calculate_primes = _mod_tools_prime_number_tools.calculate_primes
 tool_add = _mod_tools_pp_calculator_tools.add
 tool_divide = _mod_tools_pp_calculator_tools.divide
@@ -45,15 +38,6 @@ tool_subtract = _mod_tools_pp_calculator_tools.subtract
 tool_add_integers = _mod_tools_ppp_calculator_tools.add_integers
 
 mcp = FastMCP("calc_test")
-
-
-@mcp.tool()
-async def calculate_volatility_metrics(stock_data: List, ticker: str, window_size: int = 20) -> Dict[str, Any]:
-    """
-    Auto-generated MCP tool wrapper for `calculate_volatility_metrics`.
-    Calls the `calculate_volatility_metrics` tool from the `financial_plotting_tools` tool module.
-    """
-    return tool_calculate_volatility_metrics(stock_data=stock_data, ticker=ticker, window_size=window_size)
 
 
 @mcp.tool()
